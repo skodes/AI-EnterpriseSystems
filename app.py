@@ -17,7 +17,7 @@ def predict():
     prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
-
+    output = abs(output)
     return render_template('index.html', prediction_text='Sales should be $ {}'.format(output))
 
 @app.route('/results',methods=['POST'])
